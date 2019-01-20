@@ -34,6 +34,16 @@ module View
         end
 
         def render_snake(state)
+            extend Ruby2D::DSL
+            snake = state.snake
+            snake.positions.each do |pos|
+            Square.new(
+                x: @pixel_size * pos.col,
+                y: @pixel_size * pos.row,
+                size: @pixel_size,
+                color: 'green'
+            )
+            end
         end
 
     end
